@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
   const outputDiv = document.getElementById("output");
-  const sentimentDiv = document.getElementById("sentiment");
+//   const sentimentDiv = document.getElementById("sentiment");
   const API_KEY = 'AIzaSyCfvYR3qvxivO3qH-r3qfT3qLuqj0Hq8dc';  // Replace with your actual YouTube Data API key
   const API_URL = 'http://192.168.0.100:5000';
 
@@ -122,13 +122,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     //   outputDiv.innerHTML = "<p>This is not a valid YouTube URL.</p>";
     // }
 
-    displayComments(predictions)
-    sentimentDiv.innerHTML = predictions;
+    // displayComments(predictions)
+    // sentimentDiv.innerHTML = predictions;
   }});
 
 
 
-// Assuming your div has the ID "outputDiv"
+// Assuming your div has the ID "sentiment"
 function displayComments(sentimentData) {
     const outputDiv = document.getElementById("sentiment");
     outputDiv.innerHTML = ""; // Clear previous content
@@ -204,9 +204,9 @@ function displayComments(sentimentData) {
                     const commentText = item.snippet.topLevelComment.snippet.textOriginal;
                     const timestamp = item.snippet.topLevelComment.snippet.publishedAt;
                     const authorId = item.snippet.topLevelComment.snippet.authorChannelId?.value || 'Unknown';
-                    // comments.push({ text: commentText, timestamp: timestamp, authorId: authorId });
+                    comments.push({ text: commentText, timestamp: timestamp, authorId: authorId });
 
-                    comments.push(commentText)
+                    // comments.push(commentText)
                 });
             }
             
@@ -316,27 +316,6 @@ function displayComments(sentimentData) {
     }
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
