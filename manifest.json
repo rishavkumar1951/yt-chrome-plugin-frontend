@@ -9,8 +9,6 @@
   "permissions": [
     "tabs",
     "activeTab",
-    "scripting",
-    "http://localhost/*",
-    "https://www.googleapis.com/*"
+    "scripting"
   ]
 }
